@@ -4,10 +4,7 @@
   <meta charset="UTF-8">
   <title>Shop-In | Bold Minimalist Design</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- ✅ Google Fonts: Poppins -->
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
-
   <style>
     :root {
       --bg-color: #f8f1e7;
@@ -27,7 +24,6 @@
       color: var(--text-color);
     }
 
-    /* Header styles */
     header {
       background-color: var(--accent-color);
       padding: 1rem 2rem;
@@ -64,20 +60,49 @@
     }
 
     .search-bar {
-      margin-left: auto;
+      position: relative;
+      width: 250px;
+      transition: all 0.3s ease;
       margin-top: 0.5rem;
     }
 
     .search-bar input {
-      padding: 0.5rem 1rem;
+      width: 100%;
+      padding: 0.6rem 1.2rem 0.6rem 2.5rem;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
       font-size: 1rem;
-      border: 1px solid #aaa;
-      border-radius: 5px;
-      width: 200px;
       font-family: 'Poppins', sans-serif;
+      color: var(--dark-color);
+      outline: none;
+      transition: 0.3s ease all;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
     }
 
-    /* Hero section */
+    .search-bar input::placeholder {
+      color: #555;
+      opacity: 0.7;
+    }
+
+    .search-bar::before {
+      content: "🔍";
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 1.1rem;
+      pointer-events: none;
+      opacity: 0.6;
+    }
+
+    .search-bar input:focus {
+      border-color: var(--dark-color);
+      background: rgba(255, 255, 255, 0.6);
+      box-shadow: 0 0 8px rgba(0,0,0,0.2);
+    }
+
     .hero {
       text-align: center;
       padding: 4rem 2rem;
@@ -106,9 +131,14 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: 500;
+      transition: background 0.3s ease;
     }
 
-    /* Features section */
+    .btn:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+    }
+
     .features {
       display: flex;
       flex-wrap: wrap;
@@ -121,6 +151,7 @@
     .feature-box {
       max-width: 300px;
       margin: 1rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .feature-box img {
@@ -128,6 +159,12 @@
       height: auto;
       border-radius: 10px;
       margin-bottom: 1rem;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .feature-box:hover img {
+      transform: scale(1.08);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     }
 
     .feature-box h4 {
@@ -141,7 +178,6 @@
       font-weight: 400;
     }
 
-    /* Footer section */
     .shop-in {
       padding: 3rem 2rem;
       text-align: center;
@@ -159,7 +195,6 @@
       margin-bottom: 1.5rem;
     }
 
-    /* Responsive design */
     @media (max-width: 768px) {
       .hero h2 {
         font-size: 2rem;
@@ -177,6 +212,7 @@
 
       .search-bar {
         margin: 1rem 0 0 0;
+        width: 100%;
       }
 
       .feature-box {
@@ -203,35 +239,36 @@
     </div>
   </header>
 
-  <section class="hero">
-    <h2>Find It, Love It, Shop-In It!</h2>
-    <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
-    <a href="#" class="btn">LEARN MORE</a>
-  </section>
+  <main>
+    <section class="hero">
+      <h2>Find It, Love It, Shop-In It!</h2>
+      <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
+      <a href="#" class="btn">LEARN MORE</a>
+    </section>
 
-  <section class="features">
-    <div class="feature-box">
-      <img src="images/high-quality.jpg" alt="High Quality">
-      <h4>SKIN CARE</h4>
-      <p>Empower your skin. Elevate your confidence.
-Glow naturally, beautifully you.</p>
-    </div>
-    <div class="feature-box">
-      <img src="images/premium-design.jpg" alt="Premium Design">
-      <h4>CLOTHING</h4>
-      <p>High quality fabric designed to last.</p>
-    </div>
-    <div class="feature-box">
-      <img src="images/versatile.jpg" alt="Versatile">
-      <h4>CANDLES</h4>
-      <p>Scent meets daily responsibility.</p>
-    </div>
-  </section>
+    <section class="features">
+      <div class="feature-box">
+        <img src="images/high-quality.jpg" alt="Skin care products displayed aesthetically">
+        <h4>SKIN CARE</h4>
+        <p>Empower your skin. Elevate your confidence. Glow naturally. Be beautifully you.</p>
+      </div>
+      <div class="feature-box">
+        <img src="images/premium-design.jpg" alt="Premium clothing fabric">
+        <h4>CLOTHING</h4>
+        <p>High quality fabric designed to last.</p>
+      </div>
+      <div class="feature-box">
+        <img src="images/versatile.jpg" alt="Versatile candle collection">
+        <h4>CANDLES</h4>
+        <p>Scent meets daily responsibility.</p>
+      </div>
+    </section>
 
-  <section class="shop-in">
-    <h3>S H O P - I N</h3>
-    <p>High Quality • Premium Design • Versatile</p>
-  </section>
+    <section class="shop-in">
+      <h3>S H O P - I N</h3>
+      <p>High Quality • Premium Design • Versatile</p>
+    </section>
+  </main>
 
 </body>
 </html>
