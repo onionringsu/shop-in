@@ -2,8 +2,9 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Shop-In | Bold Minimalist Design</title>
+  <title>Shop-In | Skincare, Clothing & Candles – Premium Lifestyle Goods</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop-In offers high-quality, premium-designed products in skincare, clothing, and candles.">
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
@@ -15,6 +16,7 @@
 
     * {
       box-sizing: border-box;
+      scroll-behavior: smooth;
     }
 
     body {
@@ -27,6 +29,10 @@
     header {
       background-color: var(--accent-color);
       padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     }
 
     .header-top {
@@ -105,7 +111,7 @@
 
     .hero {
       text-align: center;
-      padding: 4rem 2rem;
+      padding: 5rem 2rem;
       background-image: url('images/hero.jpg');
       background-size: cover;
       background-position: center;
@@ -120,7 +126,6 @@
 
     .hero p {
       font-size: 1.2rem;
-      margin-bottom: 2rem;
       font-weight: 400;
     }
 
@@ -131,12 +136,14 @@
       text-decoration: none;
       border-radius: 5px;
       font-weight: 500;
-      transition: background 0.3s ease;
+      transition: transform 0.3s ease, background 0.3s ease;
+      display: inline-block;
     }
 
     .btn:hover {
       background-color: var(--accent-color);
       color: var(--dark-color);
+      transform: scale(1.05);
     }
 
     .features {
@@ -178,28 +185,106 @@
       font-weight: 400;
     }
 
-    .shop-in {
-      padding: 3rem 2rem;
+    .about, .contact {
       text-align: center;
+      padding: 4rem 2rem;
     }
 
-    .shop-in h3 {
-      font-size: 2rem;
+    .about {
+      background-color: #efe5d8;
+    }
+
+    .contact {
+      background-color: #f1e8dc;
+    }
+
+    .about h2, .contact h2 {
+      font-size: 1.8rem;
       font-weight: 600;
       margin-bottom: 1rem;
     }
 
-    .shop-in p {
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-bottom: 1.5rem;
+    .about p, .contact p {
+      max-width: 700px;
+      margin: 0.5rem auto;
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    .newsletter {
+      background-color: #e8ded0;
+      padding: 3rem 1rem;
+      text-align: center;
+    }
+
+    .newsletter h3 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 600;
+    }
+
+    .newsletter input[type="email"] {
+      padding: 0.6rem 1rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-right: 0.5rem;
+      width: 250px;
+    }
+
+    .newsletter button {
+      padding: 0.6rem 1.2rem;
+      background-color: var(--dark-color);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: 500;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .newsletter button:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
+    }
+
+    footer {
+      background-color: var(--accent-color);
+      padding: 2rem;
+      text-align: center;
+      color: var(--dark-color);
+      font-weight: 500;
+    }
+
+    footer a {
+      color: var(--dark-color);
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+
+    #backToTop {
+      position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: var(--dark-color);
+      color: white;
+      border: none;
+      padding: 0.75rem 1rem;
+      font-size: 1rem;
+      border-radius: 50%;
+      cursor: pointer;
+      display: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+      z-index: 1001;
+    }
+
+    #backToTop:hover {
+      background-color: var(--accent-color);
+      color: var(--dark-color);
     }
 
     @media (max-width: 768px) {
-      .hero h2 {
-        font-size: 2rem;
-      }
-
       .header-top {
         flex-direction: column;
         align-items: flex-start;
@@ -208,6 +293,7 @@
       nav {
         justify-content: flex-start;
         flex-wrap: wrap;
+        margin-top: 0.5rem;
       }
 
       .search-bar {
@@ -229,9 +315,9 @@
       <h1>SHOP-IN</h1>
       <nav>
         <a href="#">HOME</a>
-        <a href="#">ABOUT</a>
-        <a href="#">PRODUCT</a>
-        <a href="#">CONTACT</a>
+        <a href="#about">ABOUT</a>
+        <a href="#features">PRODUCT</a>
+        <a href="#contact">CONTACT</a>
       </nav>
       <div class="search-bar">
         <input type="text" placeholder="Search products...">
@@ -239,36 +325,77 @@
     </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <h2>Find It, Love It, Shop-In It!</h2>
-      <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
-      <a href="#" class="btn">LEARN MORE</a>
-    </section>
+  <section class="hero">
+    <h2>Find It, Love It, Shop-In It!</h2>
+    <p>High Quality • Premium Design • Versatile</p>
+    <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
+  </section>
 
-    <section class="features">
-      <div class="feature-box">
-        <img src="images/high-quality.jpg" alt="Skin care products displayed aesthetically">
-        <h4>SKIN CARE</h4>
-        <p>Empower your skin. Elevate your confidence. Glow naturally. Be beautifully you.</p>
-      </div>
-      <div class="feature-box">
-        <img src="images/premium-design.jpg" alt="Premium clothing fabric">
-        <h4>CLOTHING</h4>
-        <p>High quality fabric designed to last.</p>
-      </div>
-      <div class="feature-box">
-        <img src="images/versatile.jpg" alt="Versatile candle collection">
-        <h4>CANDLES</h4>
-        <p>Scent meets daily responsibility.</p>
-      </div>
-    </section>
+  <section class="features" id="features">
+    <div class="feature-box">
+      <img src="images/high-quality.jpg" alt="Skin care products displayed aesthetically">
+      <h4>SKIN CARE</h4>
+      <p>Empower your skin. Elevate your confidence. Glow naturally. Be beautifully you.</p>
+    </div>
+    <div class="feature-box">
+      <img src="images/premium-design.jpg" alt="Premium clothing fabric">
+      <h4>CLOTHING</h4>
+      <p>High quality fabric designed to last.</p>
+    </div>
+    <div class="feature-box">
+      <img src="images/versatile.jpg" alt="Versatile candle collection">
+      <h4>CANDLES</h4>
+      <p>Scent meets daily responsibility.</p>
+    </div>
+  </section>
 
-    <section class="shop-in">
-      <h3>S H O P - I N</h3>
-      <p>High Quality • Premium Design • Versatile</p>
-    </section>
-  </main>
+  <section class="about" id="about">
+    <h2>About Shop-In</h2>
+    <p>At Shop-In, we’re passionate about curating essentials that elevate everyday living. Our thoughtfully designed products—from skincare and apparel to home fragrances—are rooted in quality, sustainability, and timeless appeal.</p>
+    <p>We believe that feeling good starts with the choices we make. That’s why each item in our collection is crafted to blend aesthetic beauty with practical purpose—for a life lived well and beautifully.</p>
+  </section>
+
+  <section class="contact" id="contact">
+    <h2>Contact Us</h2>
+    <p>Email: support@shopin.com</p>
+    <p>Phone: +1 (555) 123-4567</p>
+    <p>Address: 123 Main St, Lifestyle City, CA</p>
+  </section>
+
+  <section class="newsletter">
+    <h3>Subscribe to Our Newsletter</h3>
+    <p>Get exclusive updates and discounts by subscribing.</p>
+    <form>
+      <input type="email" placeholder="Enter your email" required>
+      <button type="submit">Subscribe</button>
+    </form>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Shop-In. All rights reserved.</p>
+    <p>
+      <a href="#">Privacy Policy</a> |
+      <a href="#">Terms of Service</a>
+    </p>
+    <p>
+       Follow us:
+        <a href="https://www.instagram.com/shopin.2025?igsh=c3llMjQ4Z2NpZmZ2&utm_source=qr" target="_blank">📸 Instagram</a> 
+        <a href="https://www.facebook.com/share/1CG6cCAeYS/?mibextid=wwXIfr&direct_share_include_copy=1&fb_entity_type=unknown" target="_blank">📘 Facebook</a>
+</p>
+  </footer>
+
+  <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+
+  <script>
+    const backToTop = document.getElementById("backToTop");
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 400) {
+        backToTop.style.display = "block";
+      } else {
+        backToTop.style.display = "none";
+      }
+    });
+  </script>
 
 </body>
 </html>
