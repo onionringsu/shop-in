@@ -19,6 +19,10 @@
       scroll-behavior: smooth;
     }
 
+    html {
+      scroll-padding-top: 100px;
+    }
+
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
@@ -33,6 +37,11 @@
       top: 0;
       z-index: 1000;
       box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease;
+    }
+
+    header.hide {
+      transform: translateY(-100%);
     }
 
     .header-top {
@@ -56,13 +65,11 @@
       display: block;
     }
 
-
     .logo-title h1 {
       font-size: 1.5rem;
       margin: 0;
       font-weight: 600;
     }
-
 
     nav {
       display: flex;
@@ -344,78 +351,89 @@
   </div>
 </header>
 
+<section class="hero">
+  <h2>Find It, Love It, Shop-In It!</h2>
+  <p>High Quality • Premium Design • Versatile</p>
+  <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
+</section>
 
-  <section class="hero">
-    <h2>Find It, Love It, Shop-In It!</h2>
-    <p>High Quality • Premium Design • Versatile</p>
-    <p>Discover stories, style, savings, and smiling faces waiting just for you.</p>
-  </section>
+<section class="features" id="features">
+  <div class="feature-box">
+    <img src="images/high-quality.jpg" alt="Skin care products displayed aesthetically">
+    <h4>SKIN CARE</h4>
+    <p>Empower your skin. Elevate your confidence. Glow naturally. Be beautifully you.</p>
+  </div>
+  <div class="feature-box">
+    <img src="images/premium-design.jpg" alt="Premium clothing fabric">
+    <h4>CLOTHING</h4>
+    <p>High quality fabric designed to last.</p>
+  </div>
+  <div class="feature-box">
+    <img src="images/versatile.jpg" alt="Versatile candle collection">
+    <h4>CANDLES</h4>
+    <p>Scent meets daily responsibility.</p>
+  </div>
+</section>
 
-  <section class="features" id="features">
-    <div class="feature-box">
-      <img src="images/high-quality.jpg" alt="Skin care products displayed aesthetically">
-      <h4>SKIN CARE</h4>
-      <p>Empower your skin. Elevate your confidence. Glow naturally. Be beautifully you.</p>
-    </div>
-    <div class="feature-box">
-      <img src="images/premium-design.jpg" alt="Premium clothing fabric">
-      <h4>CLOTHING</h4>
-      <p>High quality fabric designed to last.</p>
-    </div>
-    <div class="feature-box">
-      <img src="images/versatile.jpg" alt="Versatile candle collection">
-      <h4>CANDLES</h4>
-      <p>Scent meets daily responsibility.</p>
-    </div>
-  </section>
+<section class="about" id="about">
+  <h2>About Shop-In</h2>
+  <p>At Shop-In, we’re passionate about curating essentials that elevate everyday living. Our thoughtfully designed products—from skincare and apparel to home fragrances—are rooted in quality, sustainability, and timeless appeal.</p>
+  <p>We believe that feeling good starts with the choices we make. That’s why each item in our collection is crafted to blend aesthetic beauty with practical purpose—for a life lived well and beautifully.</p>
+</section>
 
-  <section class="about" id="about">
-    <h2>About Shop-In</h2>
-    <p>At Shop-In, we’re passionate about curating essentials that elevate everyday living. Our thoughtfully designed products—from skincare and apparel to home fragrances—are rooted in quality, sustainability, and timeless appeal.</p>
-    <p>We believe that feeling good starts with the choices we make. That’s why each item in our collection is crafted to blend aesthetic beauty with practical purpose—for a life lived well and beautifully.</p>
-  </section>
+<section class="contact" id="contact">
+  <h2>Contact Us</h2>
+  <p>Email: support@shopin.com</p>
+  <p>Phone: +1 (555) 123-4567</p>
+  <p>Address: Unit 802, Northgate Cyber Plaza, Quezon City</p>
+</section>
 
-  <section class="contact" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: support@shopin.com</p>
-    <p>Phone: +1 (555) 123-4567</p>
-    <p>Address: Unit 802, Northgate Cyber Plaza, Quezon City</p>
-  </section>
+<section class="newsletter">
+  <h3>Subscribe to Our Newsletter</h3>
+  <p>Get exclusive updates and discounts by subscribing.</p>
+  <form>
+    <input type="email" placeholder="Enter your email" required>
+    <button type="submit">Subscribe</button>
+  </form>
+</section>
 
-  <section class="newsletter">
-    <h3>Subscribe to Our Newsletter</h3>
-    <p>Get exclusive updates and discounts by subscribing.</p>
-    <form>
-      <input type="email" placeholder="Enter your email" required>
-      <button type="submit">Subscribe</button>
-    </form>
-  </section>
+<footer>
+  <p>&copy; 2025 Shop-In. All rights reserved.</p>
+  <p>
+    <a href="#">Privacy Policy</a> |
+    <a href="#">Terms of Service</a>
+  </p>
+  <p>
+    Follow us:
+    <a href="https://www.instagram.com/shopin.2025?igsh=c3llMjQ4Z2NpZmZ2&utm_source=qr" target="_blank">📸 Instagram</a>
+    <a href="https://www.facebook.com/share/1CG6cCAeYS/?mibextid=wwXIfr&direct_share_include_copy=1&fb_entity_type=unknown" target="_blank">📘 Facebook</a>
+  </p>
+</footer>
 
-  <footer>
-    <p>&copy; 2025 Shop-In. All rights reserved.</p>
-    <p>
-      <a href="#">Privacy Policy</a> |
-      <a href="#">Terms of Service</a>
-    </p>
-    <p>
-       Follow us:
-        <a href="https://www.instagram.com/shopin.2025?igsh=c3llMjQ4Z2NpZmZ2&utm_source=qr" target="_blank">📸 Instagram</a> 
-        <a href="https://www.facebook.com/share/1CG6cCAeYS/?mibextid=wwXIfr&direct_share_include_copy=1&fb_entity_type=unknown" target="_blank">📘 Facebook</a>
-</p>
-  </footer>
+<button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
 
-  <button id="backToTop" onclick="window.scrollTo({ top: 0, behavior: 'smooth' });">↑</button>
+<script>
+  const backToTop = document.getElementById("backToTop");
+  window.addEventListener("scroll", () => {
+    if (window.scrollY > 400) {
+      backToTop.style.display = "block";
+    } else {
+      backToTop.style.display = "none";
+    }
+  });
 
-  <script>
-    const backToTop = document.getElementById("backToTop");
-    window.addEventListener("scroll", () => {
-      if (window.scrollY > 400) {
-        backToTop.style.display = "block";
-      } else {
-        backToTop.style.display = "none";
-      }
-    });
-  </script>
+  let lastScroll = 0;
+  const header = document.querySelector("header");
+  window.addEventListener("scroll", () => {
+    const currentScroll = window.scrollY;
+    if (currentScroll > lastScroll && currentScroll > 100) {
+      header.classList.add("hide");
+    } else {
+      header.classList.remove("hide");
+    }
+    lastScroll = currentScroll;
+  });
+</script>
 
 </body>
 </html>
