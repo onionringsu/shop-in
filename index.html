@@ -42,11 +42,27 @@
       flex-wrap: wrap;
     }
 
-    header h1 {
+    .logo-title {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-title img {
+      height: 75px;
+      width: 75px;
+      object-fit: cover;
+      border-radius: 50%;
+      display: block;
+    }
+
+
+    .logo-title h1 {
       font-size: 1.5rem;
-      margin: 0.5rem 0;
+      margin: 0;
       font-weight: 600;
     }
+
 
     nav {
       display: flex;
@@ -310,20 +326,24 @@
 </head>
 <body>
 
-  <header>
-    <div class="header-top">
+<header>
+  <div class="header-top">
+    <div class="logo-title">
+      <img src="images/logo.png" alt="Shop-In Logo">
       <h1>SHOP-IN</h1>
-      <nav>
-        <a href="#">HOME</a>
-        <a href="#about">ABOUT</a>
-        <a href="#features">PRODUCT</a>
-        <a href="#contact">CONTACT</a>
-      </nav>
-      <div class="search-bar">
-        <input type="text" placeholder="Search products...">
-      </div>
     </div>
-  </header>
+    <nav>
+      <a href="#">HOME</a>
+      <a href="#about">ABOUT</a>
+      <a href="#features">PRODUCT</a>
+      <a href="#contact">CONTACT</a>
+    </nav>
+    <div class="search-bar">
+      <input type="text" placeholder="Search products...">
+    </div>
+  </div>
+</header>
+
 
   <section class="hero">
     <h2>Find It, Love It, Shop-In It!</h2>
